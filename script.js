@@ -131,44 +131,65 @@ const artworks = [
     {
         id: 1,
         title: "The Silent Gaze",
-        desc: "Graphite on paper, 2023. An exploration of internal stillness.",
+        desc: "Graphite on paper. A study of emotion and stillness.",
         price: 450000, // Base price in NGN
-        url: "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?auto=format&fit=crop&q=80&w=800"
+        url: "https://lh3.googleusercontent.com/pw/AP1GczMGSm-bZeTIZb7qQDPMNrzIxMgTmLqGm0sz9hpYajtfH-E4pO7nDr1UjZapRUQzbI-PKHCGfVksMRycrynv6yRExTO1uNEaJqpLobN8vYp6CTWjcqE=w1200"
     },
     {
         id: 2,
         title: "Fragments of Memory",
         desc: "Charcoal and white chalk. Capturing the fading nature of past moments.",
         price: 380000,
-        url: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&q=80&w=800"
+        url: "https://lh3.googleusercontent.com/pw/AP1GczP4dQIBBVotS_jtjJnp9sKLzruAUqhMxHumhxBW5XoSNMDYR--uMN8Xb8tub9FPpuq5xAyDcCZ65u-YtlrCeI_0YnhIMIGHE0jyleSlO87Er714FqY=w1200"
     },
     {
         id: 3,
         title: "Shadow's Embrace",
         desc: "Deep charcoal study. The weight of solitude.",
         price: 520000,
-        url: "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&q=80&w=800"
+        url: "https://lh3.googleusercontent.com/pw/AP1GczOhOQx1TqAq3IYuMtusn6HvGn8IPzCKhoER8eDU8Q35Tne_iFlpS5HgGekLYIYyOFBvieD8pVban8BmMFfhyf6XwjuzK44pQVUGz4OlUYStZcAaCZU=w1200"
     },
     {
         id: 4,
         title: "The Unspoken",
         desc: "Mixed media on textured paper. A portrait of what remains unsaid.",
         price: 410000,
-        url: "https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&q=80&w=800"
+        url: "https://lh3.googleusercontent.com/pw/AP1GczOyTUkYgCdMAAW0nb-kPETmjZQ6nS9F9ZR981XqrOAu-ApGogU2wYqlQsH4CCnKzO5dSbti_lu9Y9EFn6ltyCtebEOiIxyyzR5FXuZU__qgKSHE90k=w1200"
     },
     {
         id: 5,
         title: "Ethereal Form",
         desc: "Soft graphite. The boundary between flesh and light.",
         price: 360000,
-        url: "https://images.unsplash.com/photo-1576769267415-9642010aa962?auto=format&fit=crop&q=80&w=800"
+        url: "https://lh3.googleusercontent.com/pw/AP1GczMyXDhuj4c7VA0lA7_V4XqohxdsrXSnK5e8oRMh91q67Pxgds5a7VrWBV5Am5s_yAcayJm-RN2yfS0JMCl5hkZA_pIr6pYq9JxaNamobTI1npdFzFA=w1200"
     },
     {
         id: 6,
         title: "Nocturne",
         desc: "Heavy charcoal. The beauty found in absolute darkness.",
         price: 600000,
-        url: "https://images.unsplash.com/photo-1515405295579-ba7b45403062?auto=format&fit=crop&q=80&w=800"
+        url: "https://lh3.googleusercontent.com/pw/AP1GczPfgz-jIjTgGUKhU_C1srDqM2xaWS7JGQSInTe4zizJkL1stZHwyWzeoyZNJaxFw3fRZ1er0H-H7AVuzyKKXugOERjr8QGwgoOd9oVR9FkVLeJUllE=w1200"
+    },
+    {
+        id: 7,
+        title: "Soul Reflection",
+        desc: "Graphite portrait. Capturing the essence of the subject.",
+        price: 480000,
+        url: "https://lh3.googleusercontent.com/pw/AP1GczOp6mVR5m3rYESQSz1Fwq_dhLqTtGTYJh9OmQr4OWbXCoJGEDuN9-AK6X-k-knfZ_CgiFwagVFB5lppizaErkFCWWA6zMkNwBa7HOG9CW4wLmn8vSQ=w1200"
+    },
+    {
+        id: 8,
+        title: "The Observer",
+        desc: "Charcoal on paper. A study of focus and depth.",
+        price: 420000,
+        url: "https://lh3.googleusercontent.com/pw/AP1GczNXKIrjcWaDlU6_I6J2uFyj-oNZmxWX3KCpeeV_DKIRBzdYQ91--YM14T6WE6z7wU1Xh4WwR_BuTlD75GimyEUWgje7oebJC-ZVJA9GLxTlfH37SYk=w1200"
+    },
+    {
+        id: 9,
+        title: "The Vision",
+        desc: "Detailed eye study. The window to the soul.",
+        price: 250000,
+        url: "https://lh3.googleusercontent.com/pw/AP1GczN5orZOTtpCyKkMZj3hEizyuI9ktCQT-eNdh855owF99CGgodp7LaMwEh-S6ZYv-NTKVOg2O5Fuvl4v5ON1cXhYsXpGOQqnmjH-RvenU6ZutZyPQzo=w1200"
     }
 ];
 
