@@ -1,4 +1,4 @@
-// LOAD HEADER + FOOTER
+// LOAD COMPONENTS
 async function loadComponent(id, file){
   let res = await fetch(file);
   let data = await res.text();
@@ -8,49 +8,51 @@ async function loadComponent(id, file){
 loadComponent("header","components/header.html");
 loadComponent("footer","components/footer.html");
 
-// SCROLL ANIMATION
-let fades = document.querySelectorAll(".fade");
 
-window.addEventListener("scroll", ()=>{
-  fades.forEach(el=>{
+// SCROLL ANIMATION
+function reveal(){
+  let elements = document.querySelectorAll(".fade");
+
+  elements.forEach(el=>{
     let top = el.getBoundingClientRect().top;
     if(top < window.innerHeight - 50){
       el.classList.add("show");
     }
   });
-});
+}
 
-// LOAD GALLERY
+window.addEventListener("scroll", reveal);
+window.addEventListener("load", reveal);
+
+
+// LOAD GALLERY (ONLY ON GALLERY PAGE)
 fetch("data/artworks.json")
-.then(res=>res.json())
+.then(res => res.json())
 .then(data=>{
   let gallery = document.getElementById("gallery");
   if(!gallery) return;
 
   data.forEach(item=>{
-    let div = document.createElement("div");
-    div.className="art fade";
-
     let img = document.createElement("img");
     img.src = item.image;
     img.loading = "lazy";
 
-    img.onclick = ()=> openModal(item.image);
+    img.onclick = ()=>openModal(item.image);
 
-    div.appendChild(img);
-    gallery.appendChild(div);
+    gallery.appendChild(img);
   });
 });
+
 
 // MODAL
 function openModal(src){
   let modal = document.getElementById("modal");
-  let img = document.getElementById("modal-img");
+  let modalImg = document.getElementById("modal-img");
 
-  modal.style.display="flex";
-  img.src = src;
+  modal.style.display = "flex";
+  modalImg.src = src;
 }
 
 function closeModal(){
-  document.getElementById("modal").style.display="none";
+  document.getElementById("modal").style.display = "none";
 }
