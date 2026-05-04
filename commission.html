@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Commission</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<form id="form">
+  <h2>Order Portrait</h2>
+
+  <select id="size">
+    <option value="20000">A4 - ₦20,000</option>
+    <option value="40000">A3 - ₦40,000</option>
+  </select>
+
+  <p>Total: ₦<span id="price">20000</span></p>
+
+  <button>Order via WhatsApp</button>
+</form>
+
+<div id="footer"></div>
+
+<script>
+let size = document.getElementById("size");
+let price = document.getElementById("price");
+
+size.onchange = ()=> price.innerText = size.value;
+
+document.getElementById("form").onsubmit = (e)=>{
+  e.preventDefault();
+
+  let msg = `Hello, I want a portrait. Size: ${size.options[size.selectedIndex].text}`;
+  window.open(`https://wa.me/234XXXXXXXXXX?text=${encodeURIComponent(msg)}`);
+};
+</script>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>
