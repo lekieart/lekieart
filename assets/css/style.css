@@ -1,30 +1,79 @@
+/* RESET */
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   font-family:'Segoe UI', sans-serif;
   background:#0b0b0b;
   color:#fff;
+  overflow-x:hidden;
+  line-height:1.6;
+}
+
+/* GLOBAL TYPOGRAPHY */
+h1{
+  font-size:60px;
+  font-weight:700;
+  letter-spacing:2px;
+}
+
+h2{
+  font-size:32px;
+  margin-bottom:20px;
+}
+
+p{
+  color:#bbb;
+  max-width:700px;
 }
 
 /* HEADER */
 .header{
   display:flex;
   justify-content:space-between;
+  align-items:center;
   padding:20px 40px;
-  position:sticky;
+  position:fixed;
+  width:100%;
   top:0;
-  background:rgba(0,0,0,0.85);
-  backdrop-filter:blur(10px);
+  background:rgba(0,0,0,0.5);
+  backdrop-filter:blur(15px);
+  z-index:1000;
+  transition:0.4s;
+}
+
+.header.scrolled{
+  background:#000;
+}
+
+.logo{
+  font-weight:600;
+  letter-spacing:1px;
 }
 
 nav a{
-  margin-left:20px;
+  margin-left:25px;
   text-decoration:none;
   color:#aaa;
+  position:relative;
+  transition:0.3s;
+}
+
+nav a::after{
+  content:"";
+  position:absolute;
+  bottom:-5px;
+  left:0;
+  width:0%;
+  height:2px;
+  background:#fff;
   transition:0.3s;
 }
 
@@ -32,71 +81,118 @@ nav a:hover{
   color:#fff;
 }
 
+nav a:hover::after{
+  width:100%;
+}
+
 /* HERO */
 .hero{
-  height:90vh;
+  height:100vh;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   text-align:center;
-}
+  padding:0 20px;
 
-.hero h1{
-  font-size:50px;
+  background:
+    radial-gradient(circle at center, rgba(255,255,255,0.05), transparent),
+    linear-gradient(to bottom, #0b0b0b, #000);
 }
 
 .hero p{
-  color:#bbb;
+  margin-top:15px;
+  font-size:18px;
 }
 
 /* SECTIONS */
 section{
-  padding:60px 40px;
+  padding:120px 40px;
+  position:relative;
 }
 
-h2{
-  margin-bottom:20px;
+/* SECTION DIVIDER LINE */
+section::after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:60%;
+  height:1px;
+  background:rgba(255,255,255,0.05);
 }
 
 /* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
+  gap:30px;
+  margin-top:30px;
 }
 
+/* IMAGE CARD */
 .grid img{
   width:100%;
-  border-radius:10px;
-  transition:0.4s;
+  border-radius:14px;
+  transition:0.5s;
+  cursor:pointer;
+  filter:brightness(0.9);
 }
 
 .grid img:hover{
-  transform:scale(1.05);
+  transform:scale(1.08) rotate(1deg);
+  filter:brightness(1);
+  box-shadow:
+    0 10px 30px rgba(255,255,255,0.08),
+    0 30px 60px rgba(0,0,0,0.6);
+}
+
+/* LIST (WHY CHOOSE ME) */
+ul{
+  margin-top:20px;
+  padding-left:20px;
+}
+
+ul li{
+  margin-bottom:10px;
+  color:#ccc;
 }
 
 /* BUTTON */
 button{
-  padding:15px 25px;
-  background:#fff;
+  padding:15px 30px;
+  background:linear-gradient(135deg,#fff,#ccc);
   color:#000;
   border:none;
+  border-radius:40px;
   cursor:pointer;
-  border-radius:5px;
-  margin-top:20px;
+  transition:0.3s;
+  font-weight:600;
 }
 
-/* ANIMATION */
+button:hover{
+  transform:translateY(-4px) scale(1.03);
+  box-shadow:
+    0 10px 20px rgba(255,255,255,0.2),
+    0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* CTA SECTION */
+section:last-of-type{
+  text-align:center;
+}
+
+/* FADE ANIMATION */
 .fade{
   opacity:0;
-  transform:translateY(40px);
-  transition:0.6s;
+  transform:translateY(80px) scale(0.95);
+  transition:1s ease;
 }
 
 .fade.show{
   opacity:1;
-  transform:translateY(0);
+  transform:translateY(0) scale(1);
 }
 
 /* MODAL */
@@ -106,19 +202,59 @@ button{
   left:0;
   width:100%;
   height:100%;
-  background:rgba(0,0,0,0.9);
   display:none;
   justify-content:center;
   align-items:center;
+  background:rgba(0,0,0,0.9);
+  backdrop-filter:blur(12px);
 }
 
 .modal img{
   max-width:90%;
+  border-radius:12px;
+  animation:zoom 0.4s ease;
+}
+
+@keyframes zoom{
+  from{
+    transform:scale(0.6);
+    opacity:0;
+  }
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
 }
 
 /* FOOTER */
 .footer{
   text-align:center;
-  padding:30px;
+  padding:60px 20px;
   color:#777;
+  font-size:14px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+  h1{
+    font-size:38px;
+  }
+
+  h2{
+    font-size:26px;
+  }
+
+  .header{
+    padding:15px 20px;
+  }
+
+  nav a{
+    margin-left:10px;
+    font-size:14px;
+  }
+
+  section{
+    padding:80px 20px;
+  }
 }
